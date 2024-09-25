@@ -22,6 +22,7 @@ export interface CryptoApp {
   screenshot: string[];
   liked: boolean;
   award?: string;
+  comments: string[];
 }
 
 interface AppListProps {
@@ -96,16 +97,34 @@ const AppList: React.FC<AppListProps> = ({ view, data: initialData }) => {
       {view === "list" ? (
         <>
           <div className="flex items-start pb-4 transition-all ">
-            <Image
-              src={app.logo}
-              alt={`${app.name} logo`}
-              width={48}
-              height={48}
-              className="mr-4"
-            />
+            <div className="w-12 h-12 mr-4 relative flex-shrink-0">
+              <Image
+                src={app.logo}
+                alt={`${app.name} logo`}
+                fill
+                className="rounded-md object-cover"
+              />
+            </div>
             <div className="flex-grow">
               <h3 className="text-lg font-semibold">{app.name}</h3>
-              <p className="text-sm text-gray-600">{app.description}</p>
+              <p className="text-sm text-gray-600 pr-24">{app.description}</p>
+              <div className="mt-2 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-80 hover:opacity-100 transition-all h-5 w-5 text-gray-400 mr-1"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="text-xs text-gray-500">
+                  {app.comments?.length || 1}{" "}
+                </span>
+              </div>
             </div>
             <button
               className="flex items-center flex-col justify-center"
@@ -165,13 +184,14 @@ const AppList: React.FC<AppListProps> = ({ view, data: initialData }) => {
             />
           </div>
           <div className="flex items-start">
-            <Image
-              src={app.logo}
-              alt={`${app.name} logo`}
-              width={40}
-              height={40}
-              className="mr-2"
-            />
+            <div className="w-10 h-10 mr-2 relative flex-shrink-0">
+              <Image
+                src={app.logo}
+                alt={`${app.name} logo`}
+                fill
+                className="rounded-md object-cover"
+              />
+            </div>
             <div className="flex-grow">
               <h3 className="text-lg font-semibold">{app.name}</h3>
               <p className="text-sm text-gray-600 mt-2">{app.description}</p>
