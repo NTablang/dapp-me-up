@@ -204,7 +204,7 @@ export const AppOverlay = ({
               <svg ref={svgRef} width={800} height={200} />
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-6xl font-bold text-yellow-400">
+              <span className="text-6xl font-bold text-yellow-400 likes-custom">
                 {likesCount}
               </span>
             </div>
@@ -225,11 +225,11 @@ export const AppOverlay = ({
           <div className="mb-4">
             <div className="flex items-center mb-1">
               <Image
-                src="/user-avatar.png"
+                src="/Profile.png"
                 alt="User avatar"
                 width={24}
                 height={24}
-                className="rounded-full mr-2"
+                className="rounded-md mr-2"
               />
               <span className="font-semibold text-sm">username.eth</span>
               <span className="text-xs text-gray-500 ml-2">

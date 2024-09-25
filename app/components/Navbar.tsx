@@ -3,7 +3,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <header className="flex justify-between items-center mb-6">
+    <header className="flex justify-between items-center mb-6 border-b pb-3 px-44 p-6">
       <div className="flex items-center">
         <Image
           unoptimized
@@ -15,13 +15,15 @@ function Navbar() {
           height={120}
         />
       </div>
-      <div>
-        <button className="bg-yellow-400 text-black px-4 py-2 rounded mr-2">
-          Sign In
-        </button>
-        <button className="bg-yellow-400 text-black px-4 py-2 rounded">
-          Sign Up
-        </button>
+      <div className="flex gap-2">
+        <div className="px-4 py-2 sign-in-button rounded-[38px] cursor-pointer transition-all justify-center items-center gap-2.5 inline-flex">
+          <div className="text-[#b98000] text-md tracking-tight  ">
+            Sign In
+          </div>
+        </div>
+        <div className="px-4 py-2 sign-up-button rounded-[38px] cursor-pointer transition-all justify-center items-center gap-2.5 inline-flex">
+          <div className="text-white text-md tracking-tight">Sign Up</div>
+        </div>
       </div>
     </header>
   );
