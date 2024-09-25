@@ -8,7 +8,7 @@ function Navbar() {
         <Image
           unoptimized
           priority
-          src="/DAppLogo.png"
+          src="/DappLogo.png"
           alt="dApp Me Up Logo"
           className="mr-2"
           width={120}
