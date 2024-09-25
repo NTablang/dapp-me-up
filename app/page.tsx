@@ -1,7 +1,6 @@
 "use client";
 
 import AppList, { CryptoApp } from "./components/AppList";
-import Navbar from "./components/Navbar";
 import { useState, useEffect } from "react";
 import { db } from "./utils/firebase/config";
 import { collection, getDocs } from "firebase/firestore";
